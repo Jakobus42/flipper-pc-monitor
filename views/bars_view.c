@@ -68,7 +68,7 @@ void draw_bars_view(Canvas* canvas, void* ctx) {
     
     if(app->data.gpu_temp <= 150) {
         if(app->lines_count) {
-            canvas_draw_str(canvas, 1, margin_top + line * spacing + 9, "GPU Temp");
+            canvas_draw_str(canvas, 1, margin_top + line * spacing + 9, "GPUT");
             snprintf(str, 32, "%d°C", app->data.gpu_temp);
             elements_progress_bar_with_text(
                 canvas,
