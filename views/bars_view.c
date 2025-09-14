@@ -65,6 +65,22 @@ void draw_bars_view(Canvas* canvas, void* ctx) {
 
         line++;
     }
+    
+    if(app->data.gpu_temp <= 150) {
+        if(app->lines_count) {
+            canvas_draw_str(canvas, 1, margin_top + line * spacing + 9, "GPU Temp");
+            snprintf(str, 32, "%d°C", app->data.gpu_temp);
+            elements_progress_bar_with_text(
+                canvas,
+                BAR_X,
+                margin_top + line * spacing,
+                BAR_WIDTH,
+                app->data.gpu_temp / 150.0f,
+                str);
+        }
+        
+        line++;
+    }
 
     if(app->data.vram_usage <= 100) {
         if(app->lines_count) {

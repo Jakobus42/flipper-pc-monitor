@@ -40,6 +40,7 @@ typedef struct {
     uint8_t ram_usage;
     char ram_unit[4];
     uint8_t gpu_usage;
+    uint8_t gpu_temp;
     uint16_t vram_max;
     uint8_t vram_usage;
     char vram_unit[4];
