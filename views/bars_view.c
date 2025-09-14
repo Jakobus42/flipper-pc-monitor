@@ -66,7 +66,7 @@ void draw_bars_view(Canvas* canvas, void* ctx) {
         line++;
     }
     
-    if(app->data.gpu_temp <= 150) {
+    if(app->data.gpu_temp <= 100) {
         if(app->lines_count) {
             canvas_draw_str(canvas, 1, margin_top + line * spacing + 9, "GPUT");
             snprintf(str, 32, "%d°C", app->data.gpu_temp);
@@ -75,7 +75,7 @@ void draw_bars_view(Canvas* canvas, void* ctx) {
                 BAR_X,
                 margin_top + line * spacing,
                 BAR_WIDTH,
-                app->data.gpu_temp / 150.0f,
+                app->data.gpu_temp / 100.0f,
                 str);
         }
         
